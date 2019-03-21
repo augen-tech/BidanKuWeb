@@ -153,7 +153,7 @@
                             <a class="has-arrow " href="#" aria-expanded="false"><i class="fa fa-user"></i><span class="hide-menu">Pasien</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{ route('patient.form') }}">Tambah Pasien</a></li>
-                                <li><a href="google.com">Daftar Pasien</a></li>
+                                <li><a href="{{ route('patient.list') }}">Daftar Pasien</a></li>
                             </ul>
                         </li>                        
                         <li>
@@ -252,6 +252,7 @@
     <script src="{{ asset('material/plugins/moment/min/moment.min.js') }}"></script>
     <script src="{{ asset('material/plugins/wizard/jquery.steps.min.js') }}"></script>
     <script src="{{ asset('material/plugins/wizard/jquery.validate.min.js') }}"></script>
+    
     @yield('script')
 </body>
 

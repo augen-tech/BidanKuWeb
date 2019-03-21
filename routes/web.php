@@ -17,5 +17,6 @@ Route::get('/', function () {
 });
 
 Route::get('/patient/form/', 'PatientController@Form') ->name('patient.form');
+Route::get('/patient/list/', 'PatientController@ShowList') ->name('patient.list');
 
 Route::post('/logout', 'UserController@postLogout')->name('postLogout');

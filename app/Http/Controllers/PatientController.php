@@ -27,6 +27,16 @@ class PatientController extends Controller
     //  *
     //  * @return \Illuminate\Http\Response
     //  */
+
+    public function showList()
+    {
+        //
+        
+        $patients = Patient::all();
+        
+        return view('pages.listPatient',compact('patients'));
+        
+    }
     public function create()
     {
                   

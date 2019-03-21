@@ -22,9 +22,9 @@
     <div class="col-12">
         <div class="card wizard-content">
             <div class="card-body">
-                <h4 class="card-title">Step wizard with validation</h4>
-                <h6 class="card-subtitle">You can us the validation like what we did</h6>
-                <form action="#" class="validation-wizard wizard-circle">
+                <h4 class="card-title">Formulir Pendaftaran Pasien</h4>
+                <h6 class="card-subtitle">Isi semua data</h6>
+                <form action="submit" class="validation-wizard wizard-circle">
                     <!-- Step 1 -->
                     <h6>Pendaftaran</h6>
                     <section>
@@ -210,51 +210,73 @@
                                 </div>    
                             </div>   
                         </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="wjobTitle2">Pendidikan Suami :</label>
+                                    <input type="text" class="form-control " id="wjobTitle2">
+                                </div>
+                            </div> 
+                            <div class="col-md-6">                                                                                 
+                                <div class="form-group">
+                                    <label for="wintType1">Golongan Darah :</label>
+                                    <select class="custom-select form-control required" id="wintType1" data-placeholder="Type to search cities" name="wintType1">
+                                        <option value="A">A</option>
+                                        <option value="AB">AB</option>
+                                        <option value="B">B</option>
+                                        <option value="O">O</option>                                        
+                                    </select>
+                                </div>     
+                            </div>                           
+                        </div>
                     </section>
                     <!-- Step 4 -->
-                    <h6>Step 4</h6>
+                    <h6>Tambah Anak</h6>
                     <section>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="behName1">Behaviour :</label>
-                                    <input type="text" class="form-control required" id="behName1">
-                                </div>
-                                <div class="form-group">
-                                    <label for="participants1">Confidance</label>
-                                    <input type="text" class="form-control required" id="participants1">
-                                </div>
-                                <div class="form-group">
-                                    <label for="participants1">Result</label>
-                                    <select class="custom-select form-control required" id="participants1" name="location">
-                                        <option value="">Select Result</option>
-                                        <option value="Selected">Selected</option>
-                                        <option value="Rejected">Rejected</option>
-                                        <option value="Call Second-time">Call Second-time</option>
-                                    </select>
+                                    <label for="behName1">Nama Anak :</label>
+                                    <input type="text" class="form-control " id="behName1">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="decisions1">Comments</label>
-                                    <textarea name="decisions" id="decisions1" rows="4" class="form-control"></textarea>
+                                    <label for="participants1">Jenis Kelamin Anak</label>
+                                    <select class="custom-select form-control " id="participants1" name="location">
+                                        <option value="Laki">Laki-Laki</option>
+                                        <option value="Perempuan">Perempuan</option>                                        
+                                    </select>
                                 </div>
+                            </div>                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Rate Interviwer :</label>
-                                    <div class="c-inputs-stacked">
-                                        <label class="inline custom-control custom-checkbox block">
-                                            <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description ml-0">1 star</span> </label>
-                                        <label class="inline custom-control custom-checkbox block">
-                                            <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description ml-0">2 star</span> </label>
-                                        <label class="inline custom-control custom-checkbox block">
-                                            <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description ml-0">3 star</span> </label>
-                                        <label class="inline custom-control custom-checkbox block">
-                                            <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description ml-0">4 star</span> </label>
-                                        <label class="inline custom-control custom-checkbox block">
-                                            <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description ml-0">5 star</span> </label>
-                                    </div>
+                                    <label for="behName1">Anak Ke :</label>
+                                    <input type="number" class="form-control " id="behName1">
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="behName1">Nomer Akte Kelahiran :</label>
+                                    <input type="number" class="form-control " id="behName1">
+                                </div>
+                            </div>                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="behName1">Tanggal Lahir Anak :</label>
+                                    <input type="date" class="form-control " id="behName1">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="behName1">Tempat Lahir Anak :</label>
+                                    <input type="text" class="form-control " id="behName1">
+                                </div>
+                            </div>                            
                         </div>
                     </section>
                 </form>
@@ -265,15 +287,13 @@
 @endsection
 
 @section('script')
-
     <!-- Sweet-Alert  -->
     <script src="{{ asset('material/plugins/sweetalert/sweetalert.min.js')}}"></script>
     <script src="{{ asset('material/plugins/wizard/steps.js')}}"></script>
     <!-- ============================================================== -->
+    
     <!-- Style switcher -->
     <!-- ============================================================== -->
     <script src="{{ asset('material/plugins/styleswitcher/jQuery.style.switcher.js')}}"></script>
 
-    
-    
 @endsection
