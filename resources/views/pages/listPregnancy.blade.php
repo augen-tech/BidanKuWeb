@@ -29,20 +29,28 @@
                                     <table id="myTable" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
-                                                <th>Nama</th>
+                                                <th>Nama Pasien</th>
                                                 <th>Tanggal Lahir</th>
-                                                <th>Email</th>
-                                                <th>No. Telepon</th>
+                                                <th>Terakhir Menstruasi</th>
+                                                <th>Terakhir Persalinan</th>
+                                                <th>Hari Taksiran Persalinan</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         
                                         <tbody>
                                         
                                             <tr>
+                                                <td>Nama</td>
                                                 <td>Bla</td>
                                                 <td>Bla</td>
                                                 <td>Bla</td>
-                                                <td>Bla</td>                                                
+                                                <td>Bla</td>
+                                                <td>
+                                                    <a href="#"><span><i class="fa fa-search"></i>
+                                                    <a data-toggle="modal" href="#responsive-modal"><span><i class="fa fa-pencil"></i></span></a>
+                                                    <a href="#"><span><i class="mdi mdi-delete"></i></span></a>
+                                                </td>                                                
                                             </tr> 
                                         
                                         </tbody>
@@ -65,3 +73,4 @@
     
     
 @endsection
+
