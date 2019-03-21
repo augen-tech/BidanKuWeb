@@ -31,20 +31,26 @@
                                             <tr>
                                                 <th>Nama</th>
                                                 <th>Tanggal Lahir</th>
-                                                <th>Email</th>
-                                                <th>No. Telepon</th>
+                                                <th>Tanggal checkup</th>
+                                                <th>Lokasi Checkup</th>
+                                                <th>Tanggal checkup Kembali</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         
                                         <tbody>
-                                        
                                             <tr>
+                                                <td>Nama</td>
                                                 <td>Bla</td>
                                                 <td>Bla</td>
                                                 <td>Bla</td>
-                                                <td>Bla</td>                                                
+                                                <td>Bla</td>
+                                                <td>
+                                                    <a href="#"><span><i class="fa fa-search"></i>
+                                                    <a data-toggle="modal" href="#responsive-modal"><span><i class="fa fa-pencil"></i></span></a>
+                                                    <a href="#"><span><i class="mdi mdi-delete"></i></span></a>
+                                                </td>                                                
                                             </tr> 
-                                        
                                         </tbody>
                                     </table>
                                 </div>
