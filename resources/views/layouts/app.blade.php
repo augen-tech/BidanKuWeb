@@ -159,15 +159,15 @@
                         <li>
                             <a class="has-arrow " href="#" aria-expanded="false"><i class="fa fa-user"></i><span class="hide-menu">Kehamilan</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="google.com">Tambah Kehamilan</a></li>
-                                <li><a href="google.com">Daftar Kehamilan</a></li>
+                                <li><a href="{{ route('pregnancy.form') }}">Tambah Kehamilan</a></li>
+                                <li><a href="{{ route('pregnancy.list') }}">Daftar Kehamilan</a></li>
                             </ul>
                         </li>                        
                         <li>
-                            <a class="has-arrow " href="#" aria-expanded="false"><i class="fa fa-user"></i><span class="hide-menu">Catatan Kesehatan</span></a>
+                            <a class="has-arrow " href="#" aria-expanded="false"><i class="fa fa-user"></i><span class="hide-menu">Kesehatan</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="google.com">Tambah Catatan Kesehatan</a></li>
-                                <li><a href="google.com">Daftar Catatan Kesehatan</a></li>
+                                <li><a href="{{ route('healthNote.form') }}">Tambah Catatan</a></li>
+                                <li><a href="{{ route('healthNote.list') }}">Daftar Catatan</a></li>
                             </ul>
                         </li>                        
                     </ul>                
@@ -218,7 +218,7 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer">
-                © 2018 Tekindo.com
+                
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
