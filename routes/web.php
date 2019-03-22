@@ -18,6 +18,7 @@ Route::get('/', function () {
 
 Route::get('/patient/form/', 'PatientController@Form') ->name('patient.form');
 Route::get('/patient/list/', 'PatientController@ShowList') ->name('patient.list');
+Route::post('/patient/store/', 'PatientController@Store') ->name('patient.store');
 
 Route::get('/pregnancy/form/', 'PregnancyController@Form') ->name('pregnancy.form');
 Route::get('/pregnancy/list/', 'PregnancyController@ShowList') ->name('pregnancy.list');

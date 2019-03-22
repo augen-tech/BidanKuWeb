@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Patient;
+use App\TechnicalBirthTransport;
 use Illuminate\Http\Request;
 
-class PatientController extends Controller
+class TechnicalBirthTransportController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class PatientController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Patient  $patient
+     * @param  \App\TechnicalBirthTransport  $technicalBirthTransport
      * @return \Illuminate\Http\Response
      */
-    public function show(Patient $patient)
+    public function show(TechnicalBirthTransport $technicalBirthTransport)
     {
         //
     }
@@ -52,10 +52,10 @@ class PatientController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Patient  $patient
+     * @param  \App\TechnicalBirthTransport  $technicalBirthTransport
      * @return \Illuminate\Http\Response
      */
-    public function edit(Patient $patient)
+    public function edit(TechnicalBirthTransport $technicalBirthTransport)
     {
         //
     }
@@ -64,10 +64,10 @@ class PatientController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Patient  $patient
+     * @param  \App\TechnicalBirthTransport  $technicalBirthTransport
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Patient $patient)
+    public function update(Request $request, TechnicalBirthTransport $technicalBirthTransport)
     {
         //
     }
@@ -75,10 +75,10 @@ class PatientController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Patient  $patient
+     * @param  \App\TechnicalBirthTransport  $technicalBirthTransport
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Patient $patient)
+    public function destroy(TechnicalBirthTransport $technicalBirthTransport)
     {
         //
     }
