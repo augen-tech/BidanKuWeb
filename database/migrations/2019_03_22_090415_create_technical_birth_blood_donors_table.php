@@ -13,8 +13,11 @@ class CreateTechnicalBirthBloodDonorsTable extends Migration
      */
     public function up()
     {
+        down();
         Schema::create('technical_birth_blood_donors', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->integer('technical_birth_id')->unsigned();
+            $table->integer('blood_donor_id')->unsigned();
             $table->timestamps();
         });
     }

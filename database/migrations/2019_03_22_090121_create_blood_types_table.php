@@ -13,8 +13,10 @@ class CreateBloodTypesTable extends Migration
      */
     public function up()
     {
+        down();
         Schema::create('blood_types', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->string('type',5);
             $table->timestamps();
         });
     }

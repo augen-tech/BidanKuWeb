@@ -13,8 +13,12 @@ class CreatePatientRegistrationsTable extends Migration
      */
     public function up()
     {
+        down();
         Schema::create('patient_registrations', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->integer('helper_id');            
+            $table->integer('kohort_number');
+            $table->string('kia_book_receive_date',200);
             $table->timestamps();
         });
     }

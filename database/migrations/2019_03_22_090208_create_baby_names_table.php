@@ -13,8 +13,13 @@ class CreateBabyNamesTable extends Migration
      */
     public function up()
     {
+        down();
         Schema::create('baby_names', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->integer('patient_id')->unsigned();
+            $table->string('name',200);
+            $table->string('gender',200);
+            $table->string('meaning',200);
             $table->timestamps();
         });
     }

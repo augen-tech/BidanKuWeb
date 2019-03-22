@@ -13,8 +13,10 @@ class CreatePhotosTable extends Migration
      */
     public function up()
     {
+        down();
         Schema::create('photos', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->string('source_address',200);
             $table->timestamps();
         });
     }

@@ -13,8 +13,12 @@ class CreateDiseasesHistoriesTable extends Migration
      */
     public function up()
     {
+        down();
         Schema::create('diseases_histories', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->integer('patient_id')->unsigned();
+            $table->string('name',200);
+            $table->string('description',200);
             $table->timestamps();
         });
     }

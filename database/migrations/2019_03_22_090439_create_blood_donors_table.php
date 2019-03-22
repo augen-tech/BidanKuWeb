@@ -13,8 +13,12 @@ class CreateBloodDonorsTable extends Migration
      */
     public function up()
     {
+        down();
         Schema::create('blood_donors', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->string('name',200);
+            $table->string('blood_type_id',200);
+            $table->string('phone_number',200);
             $table->timestamps();
         });
     }

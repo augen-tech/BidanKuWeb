@@ -13,8 +13,12 @@ class CreateHelpersTable extends Migration
      */
     public function up()
     {
+        down();
         Schema::create('helpers', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->string('email',200);
+            $table->string('phone_number',200);
+            $table->string('password',200);
             $table->timestamps();
         });
     }

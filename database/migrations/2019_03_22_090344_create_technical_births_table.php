@@ -13,8 +13,13 @@ class CreateTechnicalBirthsTable extends Migration
      */
     public function up()
     {
+        down();
         Schema::create('technical_births', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->integer('first_birth_helper_id')->unsigned();
+            $table->integer('second_birth_helper_id')->unsigned();
+            $table->string('birth_funding',200);
+            $table->string('after_birth_contraception_method',200);
             $table->timestamps();
         });
     }

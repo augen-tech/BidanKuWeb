@@ -13,8 +13,13 @@ class CreatePatientsTable extends Migration
      */
     public function up()
     {
+        down();
+
         Schema::create('patients', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->string('email');
+            $table->integer('phone_number');
+            $table->string('password',200);
             $table->timestamps();
         });
     }
