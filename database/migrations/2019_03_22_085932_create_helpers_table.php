@@ -13,11 +13,11 @@ class CreateHelpersTable extends Migration
      */
     public function up()
     {
-        down();
+        Schema::dropIfExists('helpers');
         Schema::create('helpers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('email',200);
-            $table->string('phone_number',200);
+            $table->integer('phone_number');
             $table->string('password',200);
             $table->timestamps();
         });

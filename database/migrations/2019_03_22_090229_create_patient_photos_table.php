@@ -13,11 +13,11 @@ class CreatePatientPhotosTable extends Migration
      */
     public function up()
     {
-        down();
+        Schema::dropIfExists('patient_photos');
         Schema::create('patient_photos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('patient_id')->unsigned();
-            $table->integer('photo_id')->unsigned();
+            $table->integer('patient_id');
+            $table->integer('photo_id');
             $table->timestamps();
         });
     }

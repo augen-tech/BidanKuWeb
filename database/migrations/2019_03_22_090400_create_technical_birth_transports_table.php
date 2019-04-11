@@ -13,11 +13,11 @@ class CreateTechnicalBirthTransportsTable extends Migration
      */
     public function up()
     {
-        down();
+        Schema::dropIfExists('technical_birth_transports');
         Schema::create('technical_birth_transports', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('technical_birth_id')->unsigned();
-            $table->integer('transport_id')->unsigned();
+            $table->integer('technical_birth_id');
+            $table->integer('transport_id');
             $table->timestamps();
         });
     }

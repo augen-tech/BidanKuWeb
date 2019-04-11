@@ -13,12 +13,13 @@ class CreatePatientRegistrationsTable extends Migration
      */
     public function up()
     {
-        down();
+        Schema::dropIfExists('patient_registrations');
         Schema::create('patient_registrations', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('patient_id'); 
             $table->integer('helper_id');            
             $table->integer('kohort_number');
-            $table->string('kia_book_receive_date',200);
+            $table->date('kia_book_receive_date');
             $table->timestamps();
         });
     }

@@ -13,15 +13,15 @@ class CreateChildrenTable extends Migration
      */
     public function up()
     {
-        down();
+        Schema::dropIfExists('children');
         Schema::create('children', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('patient_id')->unsigned();
-            $table->integer('baby_name_id')->unsigned();
-            $table->string('birth_date',200);
+            $table->integer('patient_id');
+            $table->integer('baby_name_id');
+            $table->date('birth_date');
             $table->string('birth_place',200);
-            $table->string('order',200);
-            $table->string('birth_certificate_number',200);
+            $table->integer('order');
+            $table->integer('birth_certificate_number');
             $table->timestamps();
         });
     }

@@ -13,25 +13,25 @@ class CreateHealtyNotesTable extends Migration
      */
     public function up()
     {
-        down();
+        Schema::dropIfExists('healty_notes');
         Schema::create('healty_notes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('pregnancy_info_id')->unsigned();
-            $table->string('checkup_date',200);
+            $table->integer('pregnancy_info_id');
+            $table->date('checkup_date');
             $table->string('complaint',200);
-            $table->string('blood_pressure',200);
-            $table->string('body_weight',200);
-            $table->string('pregnancy_age',200);
-            $table->string('fundus_height',200);
+            $table->integer('blood_pressure');
+            $table->integer('body_weight');
+            $table->integer('pregnancy_age');
+            $table->integer('fundus_height');
             $table->string('fetus_position',200);
-            $table->string('fetus_pulse',200);
-            $table->string('heart_pulse',200);
+            $table->integer('fetus_pulse');
+            $table->integer('heart_pulse');
             $table->string('swollen_foot',200);
             $table->string('lab_result',200);
             $table->string('action',200);
             $table->string('advice',200);
             $table->string('checkup_location',200);
-            $table->string('recheckup_date',200);
+            $table->date('recheckup_date');
             $table->timestamps();
         });
     }

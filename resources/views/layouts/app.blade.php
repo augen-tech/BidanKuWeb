@@ -153,24 +153,31 @@
                         <li>
                             <a class="has-arrow " href="#" aria-expanded="false"><i class="fa fa-user"></i><span class="hide-menu">Pasien</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="{{ route('patient.form') }}">Tambah Pasien</a></li>
-                                <li><a href="{{ route('patient.list') }}">Daftar Pasien</a></li>
+                                <li><a href="{{ route('patient.create') }}">Tambah Pasien</a></li>
+                                <li><a href="{{ route('patient.index') }}">Daftar Pasien</a></li>
                             </ul>
                         </li>                        
                         <li>
                             <a class="has-arrow " href="#" aria-expanded="false"><i class="fa fa-user"></i><span class="hide-menu">Kehamilan</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="{{ route('pregnancy.form') }}">Tambah Kehamilan</a></li>
-                                <li><a href="{{ route('pregnancy.list') }}">Daftar Kehamilan</a></li>
+                                <li><a href="{{ route('pregnancy.create') }}">Tambah Kehamilan</a></li>
+                                <li><a href="{{ route('pregnancy.index') }}">Daftar Kehamilan</a></li>
                             </ul>
                         </li>                        
                         <li>
                             <a class="has-arrow " href="#" aria-expanded="false"><i class="fa fa-user"></i><span class="hide-menu">Kesehatan</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="{{ route('healthNote.form') }}">Tambah Catatan</a></li>
-                                <li><a href="{{ route('healthNote.list') }}">Daftar Catatan</a></li>
+                                <li><a href="{{ route('healthNote.create') }}">Tambah Catatan</a></li>
+                                <li><a href="{{ route('healthNote.index') }}">Daftar Catatan</a></li>
                             </ul>
-                        </li>                        
+                        </li>  
+                        <li>
+                            <a class="has-arrow " href="#" aria-expanded="false"><i class="fa fa-user"></i><span class="hide-menu">Tenaga Kesehatan</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="{{ route('helper.create') }}">Tambah</a></li>
+                                <li><a href="{{ route('helper.index') }}">Daftar</a></li>
+                            </ul>
+                        </li>                      
                     </ul>                
                 </nav>
             </div>

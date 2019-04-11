@@ -32,12 +32,12 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="wfirstName2"> Nomor Registrasi Ibu : </label>
-                                    <input disabled type="text" class="form-control" id="wfirstName2" name="registrationNumber"> </div>
+                                    <input value="{{$patientCount + 1}}" disabled type="text" class="form-control" id="wfirstName2" name="registrationNumber"> </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="wlastName2"> Nomor Urut di Kohort Ibu : </label>
-                                    <input type="number" class="form-control " id="wlastName2" name="kohortNumber"> </div>
+                                    <input value="{{$patientCount + 1}}" disabled type="text" class="form-control " id="wlastName2" name="kohortNumber"> </div>
                             </div>
                         </div>
                         <div class="row">
@@ -50,9 +50,10 @@
                             <div class="col-md-6">                                                                                 
                                 <div class="form-group">
                                     <label for="wintType1">Nama Tenaga Kesehatan :</label>
-                                    <select class="custom-select form-control " id="wintType1" data-placeholder="Type to search cities" name="wintType1">
-                                        <option value="Nela">Nela</option>
-                                        <option value="Gue">Gue</option>                                        
+                                    <select class="custom-select form-control " id="wintType1" data-placeholder="Type to search cities" name="helperId">
+                                        @foreach($helperBiodatas as $index => $row)    
+                                            <option value="{{$row->id}}">{{$row->name}}</option>                                            
+                                        @endforeach
                                     </select>
                                 </div>     
                             </div>  
@@ -63,52 +64,54 @@
                     <!-- Step 2 -->
                     <h6>Identitas Pasien</h6>
                     <section>
+                         <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="jobTitle2">Email :</label>
+                                    <input type="text" class="form-control " id="jobTitle2" name="patientEmail">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="wdate2">Password :</label>
+                                    <input disabled type="text" class="form-control " id="wdate2" name="patientPhoneNumber"> 
+                                </div>
+                            </div>                                                       
+                        </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="jobTitle2">Nama Ibu :</label>
-                                    <input type="text" class="form-control " id="jobTitle2">
+                                    <input type="text" class="form-control " id="jobTitle2" name="patientName">
                                 </div>
                             </div>                            
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="wdate2">Tanggal Lahir :</label>
-                                    <input type="date" class="form-control " id="wdate2"> </div>
-                            </div>                            
+                                    <label for="wdate2">No. Telepon :</label>
+                                    <input type="number" class="form-control " id="wdate2" name="patientPhoneNumber"> 
+                                </div>
+                            </div>                             
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="jobTitle2">Tempat Lahir :</label>
-                                    <input type="text" class="form-control " id="jobTitle2">
+                                    <input type="text" class="form-control " id="jobTitle2" name="patientBirthPlace">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="wdate2">Tanggal Lahir :</label>
+                                    <input type="date" class="form-control " id="wdate2" name="patientBirthDate"> 
                                 </div>
                             </div>                            
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="jobTitle2">Kehamilan Ke :</label>
-                                    <input type="number" class="form-control " id="jobTitle2">
-                                </div>
-                            </div>                           
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="jobTitle2">Anak Terakhir Umur :</label>
-                                    <input type="number" class="form-control " id="jobTitle2">
-                                </div>
-                            </div>                            
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="jobTitle2">Jumlah Anak :</label>
-                                    <input type="number" class="form-control " id="jobTitle2">
-                                </div>
-                            </div>                           
-                        </div>
+                                                       
+                        </div>          
                         <div class="row">   
                             <div class="col-md-6">                                                                                 
                                 <div class="form-group">
                                     <label for="wintType1">Agama :</label>
-                                    <select class="custom-select form-control required" id="wintType1" data-placeholder="Type to search cities" name="wintType1">
+                                    <select class="custom-select form-control required" id="wintType1" data-placeholder="Type to search cities" name="patientReligion">
                                         <option value="Islam">Islam</option>
                                         <option value="Kristen Protestan">Kristen Protestan</option>
                                         <option value="Katolik">Katolik</option>
@@ -122,7 +125,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="jobTitle2">Pendidikan :</label>
-                                    <input type="text" class="form-control " id="jobTitle2">
+                                    <input type="text" class="form-control " id="jobTitle2" name="patientEducation">
                                 </div>
                             </div>                                              
                         </div>
@@ -130,18 +133,18 @@
                             <div class="col-md-6">                                                                                 
                                 <div class="form-group">
                                     <label for="wintType1">Golongan Darah :</label>
-                                    <select class="custom-select form-control required" id="wintType1" data-placeholder="Type to search cities" name="wintType1">
-                                        <option value="A">A</option>
-                                        <option value="AB">AB</option>
-                                        <option value="B">B</option>
-                                        <option value="O">O</option>                                        
+                                    <select class="custom-select form-control required" id="wintType1" data-placeholder="Type to search cities" name="patientBloodTypeId">
+                                        <option value="1">A</option>
+                                        <option value="2">B</option>
+                                        <option value="3">AB</option>
+                                        <option value="4">O</option>                                        
                                     </select>
                                 </div>     
                             </div>  
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="jobTitle2">Pekerjaan :</label>
-                                    <input type="text" class="form-control " id="jobTitle2">
+                                    <input type="text" class="form-control " id="jobTitle2" name="patientOccupation">
                                 </div>
                             </div>                                              
                         </div>
@@ -149,13 +152,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="jobTitle2">No.JKN :</label>
-                                    <input type="number" class="form-control " id="jobTitle2">
+                                    <input type="number" class="form-control " id="jobTitle2" name="jknNumber">
                                 </div>
                             </div>                            
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="jobTitle2">Alamat Rumah :</label>
-                                    <input type="text" class="form-control " id="jobTitle2">
+                                    <input type="text" class="form-control " id="jobTitle2" name="patientAddress">
                                 </div>
                             </div>                           
                         </div>
@@ -163,31 +166,103 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="jobTitle2">Kecamatan :</label>
-                                    <input type="text" class="form-control " id="jobTitle2">
+                                    <input type="text" class="form-control " id="jobTitle2" name="subDistrict">
                                 </div>
                             </div>                            
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="jobTitle2">Kabupaten/Kota :</label>
-                                    <input type="text" class="form-control " id="jobTitle2">
+                                    <input type="text" class="form-control " id="jobTitle2" name="district">
                                 </div>
                             </div>                           
                         </div>
                     </section>
                     <!-- Step 3 -->
+                    <h6>Riwayat Pasien</h6>
+                    <section>
+                         
+                        <div class="row">                          
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Kehamilan Ke <i>(Gravida)</i>:</label>
+                                    <input type="number" class="form-control " name="pregnancyCount">
+                                </div>
+                            </div> 
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Jumlah Persalinan <i>(Partus)</i>:</label>
+                                    <input type="number" class="form-control " name="laborCount">
+                                </div>
+                            </div>                          
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="jobTitle2">Jumlah Keguguran <i>(Abortus)</i>:</label>
+                                    <input type="number" class="form-control " id="jobTitle2" name="miscarriageCount">
+                                </div>
+                            </div>                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="jobTitle2">Jumlah Anak Hidup:</label>
+                                    <input type="number" class="form-control " id="jobTitle2" name="lifeChildCount">
+                                </div>
+                            </div>                           
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="jobTitle2">Jumlah Lahir Mati :</label>
+                                    <input type="number" class="form-control " id="jobTitle2" name="bornDiedCount">
+                                </div>
+                            </div>                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="jobTitle2">Jumlah Anak Lahir Kurang Bulan:</label>
+                                    <input type="number" class="form-control " id="jobTitle2" name="prematureChildCount">
+                                </div>
+                            </div>                           
+                        </div>
+                        <div class="row">   
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="jobTitle2">Jarak Kehamilan Ini Dengan Persalinan Terakhir (Bulan): </label>
+                                    <input type="number" class="form-control " id="jobTitle2" name="lifeChildCount">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label >Umur Anak Terakhir:</label>
+                                    <input type="number" class="form-control " id="jobTitle2" name="lastChildAge">
+                                </div>
+                            </div>   
+                                                                       
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label >Terakhir Imunisasi TT:</label>
+                                    <input type="date" class="form-control " id="jobTitle2" name="lastImunitationDate">
+                                </div>
+                            </div>                                          
+                        </div>
+                        
+                    
+                    </section>
+                    <!-- Step 4 -->
                     <h6>Identitas Suami Pasien</h6>
                     <section>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="wjobTitle2">Nama Suami :</label>
-                                    <input type="text" class="form-control " id="wjobTitle2">
+                                    <input type="text" class="form-control " id="wjobTitle2" name="husbandName">
                                 </div>
                             </div> 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="wjobTitle2">Tanggal Lahir Suami :</label>
-                                    <input type="date" class="form-control " id="wjobTitle2">
+                                    <input type="date" class="form-control " id="wjobTitle2" name="husbandBirthDate">
                                 </div>
                             </div>                            
                         </div>
@@ -195,14 +270,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="wjobTitle2">Tempat Lahir Suami :</label>
-                                    <input type="text" class="form-control " id="wjobTitle2">
+                                    <input type="text" class="form-control " id="wjobTitle2" name="husbandBirthPlace">
                                 </div>     
                             </div>     
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="wintType1">Agama Suami:</label>
-                                    <select class="custom-select form-control required" id="wintType1" data-placeholder="Type to search cities" name="wintType1">
+                                    <select class="custom-select form-control required" id="wintType1" data-placeholder="Type to search cities" name="husbandReligion">
                                         <option value="Islam">Islam</option>
                                         <option value="Kristen Protestan">Kristen Protestan</option>
                                         <option value="Katolik">Katolik</option>
@@ -218,23 +293,23 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="wjobTitle2">Pendidikan Suami :</label>
-                                    <input type="text" class="form-control " id="wjobTitle2">
+                                    <input type="text" class="form-control " id="wjobTitle2" name="husbandEducation">
                                 </div>
                             </div> 
                             <div class="col-md-6">                                                                                 
                                 <div class="form-group">
                                     <label for="wintType1">Golongan Darah :</label>
-                                    <select class="custom-select form-control required" id="wintType1" data-placeholder="Type to search cities" name="wintType1">
-                                        <option value="A">A</option>
-                                        <option value="AB">AB</option>
-                                        <option value="B">B</option>
-                                        <option value="O">O</option>                                        
+                                    <select class="custom-select form-control required" id="wintType1" data-placeholder="Type to search cities" name="husbandBloodType">
+                                        <option value="1">A</option>
+                                        <option value="2">B</option>
+                                        <option value="3">AB</option>
+                                        <option value="4">O</option>                                        
                                     </select>
                                 </div>     
                             </div>                           
                         </div>
                     </section>
-                    <!-- Step 4 -->
+                    <!-- Step 5 -->
                     <h6>Tambah Anak</h6>
                     <section>
                         <div class="row">

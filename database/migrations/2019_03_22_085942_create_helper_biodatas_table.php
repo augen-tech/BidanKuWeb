@@ -13,12 +13,12 @@ class CreateHelperBiodatasTable extends Migration
      */
     public function up()
     {
-        down();
+        Schema::dropIfExists('helper_biodatas');
         Schema::create('helper_biodatas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('helper_id')->unsigned();
+            $table->integer('helper_id');
             $table->string('name',200);
-            $table->string('birth_date',200);
+            $table->date('birth_date');
             $table->string('birth_place',200);
             $table->timestamps();
         });

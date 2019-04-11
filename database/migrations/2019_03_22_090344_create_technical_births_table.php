@@ -13,7 +13,7 @@ class CreateTechnicalBirthsTable extends Migration
      */
     public function up()
     {
-        down();
+        Schema::dropIfExists('technical_births');
         Schema::create('technical_births', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('first_birth_helper_id')->unsigned();

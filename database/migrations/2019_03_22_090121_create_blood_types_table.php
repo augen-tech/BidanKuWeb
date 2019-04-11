@@ -13,7 +13,7 @@ class CreateBloodTypesTable extends Migration
      */
     public function up()
     {
-        down();
+        Schema::dropIfExists('blood_types');
         Schema::create('blood_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('type',5);

@@ -13,7 +13,7 @@ class CreateNewsTable extends Migration
      */
     public function up()
     {
-        down();
+        Schema::dropIfExists('news');
         Schema::create('news', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title',200);

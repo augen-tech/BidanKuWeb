@@ -13,7 +13,7 @@ class CreatePhotosTable extends Migration
      */
     public function up()
     {
-        down();
+        Schema::dropIfExists('photos');
         Schema::create('photos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('source_address',200);

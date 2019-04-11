@@ -13,10 +13,10 @@ class CreateBabyNamesTable extends Migration
      */
     public function up()
     {
-        down();
+        Schema::dropIfExists('baby_names');
         Schema::create('baby_names', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('patient_id')->unsigned();
+            $table->integer('patient_id');
             $table->string('name',200);
             $table->string('gender',200);
             $table->string('meaning',200);

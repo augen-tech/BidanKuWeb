@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helper;
+use App\HelperBiodata;
 use Illuminate\Http\Request;
 
 class HelperController extends Controller
@@ -14,7 +15,9 @@ class HelperController extends Controller
      */
     public function index()
     {
-        //
+        $helpers = Helper::all();   
+        $helper_biodatas = HelperBiodata::all();         
+        return view('pages.indexHelper',compact('helpers','helper_biodatas'));
     }
 
     /**
@@ -25,6 +28,8 @@ class HelperController extends Controller
     public function create()
     {
         //
+        // return dd();
+        return view('pages.formHelper');
     }
 
     /**
@@ -35,7 +40,28 @@ class HelperController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return dd($request);
+
+        //Create Helper
+        $helper = [
+            'email' => $request->email,
+            'phone_number' => $request->phoneNumber,
+            'password' => 132456789,
+        ];
+        $tempHelper = Helper::create($helper);
+        
+
+        //Create Helper Biodata
+        $helperBiodata = [
+            'helper_id' => $tempHelper->id,
+            'name' => "$request->name",        
+            'birth_date' => $request->birthDate,
+            'birth_place' => $request->birthPlace,
+        ];
+
+        
+        HelperBiodata::create($helperBiodata);
+        return redirect()->route('helper.index');
     }
 
     /**

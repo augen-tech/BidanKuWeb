@@ -13,11 +13,11 @@ class CreateFavoriteBabyNamesTable extends Migration
      */
     public function up()
     {
-        down();
+        Schema::dropIfExists('favorite_baby_names');
         Schema::create('favorite_baby_names', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('patient_id')->unsigned();
-            $table->integer('baby_name_id')->unsigned();
+            $table->integer('patient_id');
+            $table->integer('baby_name_id');
             $table->timestamps();
         });
     }

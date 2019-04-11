@@ -13,11 +13,11 @@ class CreateTransportsTable extends Migration
      */
     public function up()
     {
-        down();
+        Schema::dropIfExists('transports');
         Schema::create('transports', function (Blueprint $table) {
             $table->increments('id');
             $table->string('driver_name',200);
-            $table->string('driver_phone_number',200);
+            $table->integer('driver_phone_number');
             $table->string('transport_detail',200);
             $table->timestamps();
         });
