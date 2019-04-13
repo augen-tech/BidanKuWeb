@@ -21,6 +21,8 @@ class CreateHelpersTable extends Migration
             $table->string('password',200);
             $table->timestamps();
         });
+
+        DB::update("ALTER TABLE helpers AUTO_INCREMENT = 0;");
     }
 
     /**

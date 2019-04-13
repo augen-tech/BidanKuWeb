@@ -316,51 +316,65 @@
                     </section>
                     <!-- Step 5 -->
                     <h6>Tambah Anak</h6>
-                    <section>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="behName1">Nama Anak :</label>
-                                    <input type="text" class="form-control " id="behName1">
+                    <section >
+                        <div id="dynamicChildernSection">
+                            <div id="childernForm" hidden>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label >Nama Anak :</label>
+                                            <input type="text" class="form-control " >
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label >Jenis Kelamin Anak</label>
+                                            <select class="custom-select form-control " name="location">
+                                                <option value="Laki">Laki-Laki</option>
+                                                <option value="Perempuan">Perempuan</option>                                        
+                                            </select>
+                                        </div>
+                                    </div>                            
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Anak Ke :</label>
+                                            <input type="number" class="form-control ">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label >Nomer Akte Kelahiran :</label>
+                                            <input type="number" class="form-control ">
+                                        </div>
+                                    </div>                            
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label >Tanggal Lahir Anak :</label>
+                                            <input type="date" class="form-control ">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Tempat Lahir Anak :</label>
+                                            <input type="text" class="form-control ">
+                                        </div>
+                                    </div>                            
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="participants1">Jenis Kelamin Anak</label>
-                                    <select class="custom-select form-control " id="participants1" name="location">
-                                        <option value="Laki">Laki-Laki</option>
-                                        <option value="Perempuan">Perempuan</option>                                        
-                                    </select>
-                                </div>
-                            </div>                            
                         </div>
+                        
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="behName1">Anak Ke :</label>
-                                    <input type="number" class="form-control " id="behName1">
-                                </div>
+                            <div class="col-md-12">
+                                <center>
+                                    <button type="button" class="btn btn-block btn-info" data-count=0 onclick="addChild()">Tambah Anak</button>
+                                </center>
+                                <br>
+                                <br>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="behName1">Nomer Akte Kelahiran :</label>
-                                    <input type="number" class="form-control " id="behName1">
-                                </div>
-                            </div>                            
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="behName1">Tanggal Lahir Anak :</label>
-                                    <input type="date" class="form-control " id="behName1">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="behName1">Tempat Lahir Anak :</label>
-                                    <input type="text" class="form-control " id="behName1">
-                                </div>
-                            </div>                            
                         </div>
                     </section>
                 </form>
@@ -383,6 +397,25 @@
     <!-- ============================================================== -->
     <script src="{{ asset('material/plugins/styleswitcher/jQuery.style.switcher.js')}}"></script>
 
+    <script>
+        function addChild(){
+            // document.getElementById("test").innerHTML = "Hello World";
+
+            var container = document.getElementById("dynamicChildernSection");
+            var form = document.getElementById("childernForm");
+
+            var cln = form.cloneNode(true);
+            cln.hidden = false;
+
+            
+            while (container.hasChildNodes()) {
+                container.removeChild(container.lastChild);
+            }
+            container.appendChild(cln);
+            
+        }
+    </script>
+        
     
     <script>
         
