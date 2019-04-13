@@ -17,9 +17,9 @@ class CreateHusbandsTable extends Migration
         Schema::create('husbands', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('patient_id');
-            $table->string('email',200);
-            $table->integer('phone_number');
-            $table->string('password',200);
+            $table->string('email',200)->nullable();
+            $table->integer('phone_number')->nullable();
+            $table->string('password',200)->nullable();
             $table->timestamps();
         });
     }

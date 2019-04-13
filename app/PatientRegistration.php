@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class PatientRegistration extends Model
 {
     //
-    protected $table= 'patient_biodata';
+    protected $table= 'patient_registrations';
     
     
     protected $fillable =[

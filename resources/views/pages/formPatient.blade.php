@@ -32,12 +32,12 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="wfirstName2"> Nomor Registrasi Ibu : </label>
-                                    <input value="{{$patientCount + 1}}" disabled type="text" class="form-control" id="wfirstName2" name="registrationNumber"> </div>
+                                    <input readonly value="{{$patientCount}}" type="number" class="form-control" id="wfirstName2" name="registrationNumber"> </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="wlastName2"> Nomor Urut di Kohort Ibu : </label>
-                                    <input value="{{$patientCount + 1}}" disabled type="text" class="form-control " id="wlastName2" name="kohortNumber"> </div>
+                                    <input readonly value="{{$patientCount}}"  type="number" class="form-control" id="wlastName2" name="kohortNumber"> </div>
                             </div>
                         </div>
                         <div class="row">
@@ -45,7 +45,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="wdate2">Tanggal menerima buku KIA :</label>
-                                    <input type="date" class="form-control" id="kiaDate"> </div>
+                                    <input type="date" class="form-control" name="kiaDate"> </div>
                             </div>
                             <div class="col-md-6">                                                                                 
                                 <div class="form-group">
@@ -58,7 +58,7 @@
                                 </div>     
                             </div>  
                         </div>
-                        <div class="row">
+                        
                                                     
                     </section>
                     <!-- Step 2 -->
@@ -74,14 +74,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="wdate2">Password :</label>
-                                    <input disabled type="text" class="form-control " id="wdate2" name="patientPhoneNumber"> 
+                                    <input readonly type="text" class="form-control " id="wdate2" name="patientPassword"> 
                                 </div>
                             </div>                                                       
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="jobTitle2">Nama Ibu :</label>
+                                    <label for="jobTitle2">Nama Pasien/Ibu :</label>
                                     <input type="text" class="form-control " id="jobTitle2" name="patientName">
                                 </div>
                             </div>                            
@@ -180,7 +180,6 @@
                     <!-- Step 3 -->
                     <h6>Riwayat Pasien</h6>
                     <section>
-                         
                         <div class="row">                          
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -235,8 +234,7 @@
                                     <label >Umur Anak Terakhir:</label>
                                     <input type="number" class="form-control " id="jobTitle2" name="lastChildAge">
                                 </div>
-                            </div>   
-                                                                       
+                            </div>                                                 
                         </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -246,8 +244,6 @@
                                 </div>
                             </div>                                          
                         </div>
-                        
-                    
                     </section>
                     <!-- Step 4 -->
                     <h6>Identitas Suami Pasien</h6>
@@ -296,10 +292,19 @@
                                     <input type="text" class="form-control " id="wjobTitle2" name="husbandEducation">
                                 </div>
                             </div> 
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="wjobTitle2">Pekerjaan Suami :</label>
+                                    <input type="text" class="form-control " id="wjobTitle2" name="husbandOccupation">
+                                </div>
+                            </div>                          
+                        </div>
+                        <div class="row">
+                            
                             <div class="col-md-6">                                                                                 
                                 <div class="form-group">
                                     <label for="wintType1">Golongan Darah :</label>
-                                    <select class="custom-select form-control required" id="wintType1" data-placeholder="Type to search cities" name="husbandBloodType">
+                                    <select class="custom-select form-control required" id="wintType1" data-placeholder="Type to search cities" name="husbandBloodTypeId">
                                         <option value="1">A</option>
                                         <option value="2">B</option>
                                         <option value="3">AB</option>

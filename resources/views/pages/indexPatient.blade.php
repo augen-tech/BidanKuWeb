@@ -39,10 +39,10 @@
                                         <tbody>
                                         @foreach($patients as $index => $row)
                                             <tr>
-                                                <td>{{$row->email}}</td>
-                                                <td>{{$row->email}}</td>
-                                                <td>{{$row->email}}</td>
-                                                <td>{{$row->phone_number}}</td>                                                
+                                                <td>{{$patientBiodatas[$index]->name}}</td>
+                                                <td>{{$patientBiodatas[$index]->birth_date}}</td>
+                                                <td>{{$patientBiodatas[$index]->email}}</td>
+                                                <td>{{$patientBiodatas[$index]->phone_number}}</td>                                                
                                             </tr> 
                                         @endforeach
                                         </tbody>

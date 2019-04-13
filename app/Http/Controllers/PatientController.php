@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Patient;
 use App\PatientRegistration;
 use App\PatientBiodata;
+use App\Husband;
+use App\HusbandBiodata;
 use App\HelperBiodata;
 use Illuminate\Http\Request;
 
@@ -20,8 +22,10 @@ class PatientController extends Controller
     public function index()
     {
         //
-        $patients = Patient::all();        
-        return view('pages.indexPatient',compact('patients'));
+        $patients = Patient::all();   
+        $patientRegistrations = PatientRegistration::all();
+        $patientBiodatas = PatientBiodata::all();     
+        return view('pages.indexPatient',compact('patients','patientRegistrations','patientBiodatas'));
     }
     
     /**
@@ -34,6 +38,7 @@ class PatientController extends Controller
         //     
         $helperBiodatas = HelperBiodata::all();
         $patientCount = count(Patient::all());
+        $patientCount ++;
         return view('pages.formPatient',compact('patientCount','helperBiodatas'));      
     }
 
@@ -52,7 +57,7 @@ class PatientController extends Controller
         $tempPatient = [
             'email' => "email",
             'phone_number' => 132456789,
-            'password' => 132456789,
+            'password' => 132,
         ];
         $patient = Patient::create($tempPatient);
 
@@ -85,10 +90,33 @@ class PatientController extends Controller
             'occupation' => $request->patientOccupation,
             'jkn_number' => $request->jknNumber,
             'address' => $request->patientAddress,
-            'sub_distric' => $request->patientSubDistrict,
-            'distric' => $request->patientDistric,
+            'sub_district' => $request->patientSubDistrict,
+            'district' => $request->patientDistrict,
             'family_phone_number' => $request->familyPhoneNumber,
         ];
+        $patientBiodata = PatientBiodata::create($tempPatientBiodata);
+
+        //Create Husband
+        $tempHusband = [
+            'patient_id' => $patient->id,
+            'email' => $request->husbandEmail,
+            'phone_number' => $request->husbandPhoneNumber,
+            'password' => 123,
+        ];
+        $husband = Husband::create($tempHusband);
+
+        //Create Husband Biodata
+        $tempHusbandBiodata = [
+            'husband_id' => $patient->id,
+            'name' => $request->husbandName,
+            'birth_date' => $request->husbandBirthDate,
+            'birth_place' => $request->husbandBirthPlace,
+            'blood_type_id' => $request->husbandBloodTypeId,
+            'education' => $request->husbandEducation,
+            'religion' => $request->husbandReligion,
+            'occupation' => $request->husbandOccupation,
+        ];
+        $husband = Husband::create($tempHusband);
 
         return redirect()->route('patient.index');
     }

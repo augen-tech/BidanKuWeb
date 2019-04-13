@@ -16,10 +16,10 @@ class CreatePatientRegistrationsTable extends Migration
         Schema::dropIfExists('patient_registrations');
         Schema::create('patient_registrations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('patient_id'); 
-            $table->integer('helper_id');            
-            $table->integer('kohort_number');
-            $table->date('kia_book_receive_date');
+            $table->integer('patient_id')->nullable(); 
+            $table->integer('helper_id')->nullable();            
+            $table->integer('kohort_number')->nullable();
+            $table->date('kia_book_receive_date')->nullable();
             $table->timestamps();
         });
     }
